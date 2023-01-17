@@ -10,7 +10,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `marketplaceServiceGetSoftwareList()`
 
 ```php
-marketplaceServiceGetSoftwareList(): \OpenAPI\Client\Model\MarketplaceGetSoftwareListResponse
+marketplaceServiceGetSoftwareList($category_name, $display_name, $is_pinned): \OpenAPI\Client\Model\MarketplaceGetSoftwareListResponse
 ```
 
 
@@ -32,9 +32,12 @@ $apiInstance = new OpenAPI\Client\Api\MarketplaceServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$category_name = 'category_name_example'; // string
+$display_name = 'display_name_example'; // string
+$is_pinned = True; // bool
 
 try {
-    $result = $apiInstance->marketplaceServiceGetSoftwareList();
+    $result = $apiInstance->marketplaceServiceGetSoftwareList($category_name, $display_name, $is_pinned);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MarketplaceServiceApi->marketplaceServiceGetSoftwareList: ', $e->getMessage(), PHP_EOL;
@@ -43,7 +46,11 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_name** | **string**|  | [optional] |
+| **display_name** | **string**|  | [optional] |
+| **is_pinned** | **bool**|  | [optional] |
 
 ### Return type
 
