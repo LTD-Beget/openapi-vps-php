@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **price_month** | **float** |  | [optional]
 **available** | **bool** |  | [optional]
 **custom** | **bool** |  | [optional]
+**configurable** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

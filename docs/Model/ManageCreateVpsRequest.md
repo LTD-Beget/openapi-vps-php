@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **hostname** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **configuration_id** | **string** |  | [optional]
+**configuration_params** | [**\OpenAPI\Client\Model\StructuresConfigurationParams**](StructuresConfigurationParams.md) |  | [optional]
 **software** | [**\OpenAPI\Client\Model\ManageSoftwareInstallInfo**](ManageSoftwareInstallInfo.md) |  | [optional]
 **snapshot_id** | **string** |  | [optional]
 **ssh_keys** | **int[]** |  | [optional]
