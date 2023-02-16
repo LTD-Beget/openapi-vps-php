@@ -11,7 +11,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `configuratorServiceGetCalculation()`
 
 ```php
-configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
+configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id, $software_id, $snapshot_id): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
 ```
 
 
@@ -37,9 +37,11 @@ $params_cpu_count = 56; // int
 $params_disk_size = 56; // int
 $params_memory = 56; // int
 $vps_id = 'vps_id_example'; // string
+$software_id = 56; // int
+$snapshot_id = 'snapshot_id_example'; // string
 
 try {
-    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id);
+    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id, $software_id, $snapshot_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfiguratorServiceApi->configuratorServiceGetCalculation: ', $e->getMessage(), PHP_EOL;
@@ -54,6 +56,8 @@ try {
 | **params_disk_size** | **int**|  | [optional] |
 | **params_memory** | **int**|  | [optional] |
 | **vps_id** | **string**|  | [optional] |
+| **software_id** | **int**|  | [optional] |
+| **snapshot_id** | **string**|  | [optional] |
 
 ### Return type
 
