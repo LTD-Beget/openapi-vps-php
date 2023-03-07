@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **password** | **string** |  | [optional]
 **beget_ssh_access_allowed** | **bool** |  | [optional]
 **private_networks** | [**\OpenAPI\Client\Model\ManagePrivateNetworkInfo[]**](ManagePrivateNetworkInfo.md) |  | [optional]
+**link_slug** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

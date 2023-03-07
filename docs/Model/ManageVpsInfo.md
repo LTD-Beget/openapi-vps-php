@@ -31,5 +31,6 @@ Name | Type | Description | Notes
 **technical_domain** | **string** |  | [optional]
 **software_domain** | **string** |  | [optional]
 **software** | [**\OpenAPI\Client\Model\StructuresInstalledSoftwareInfo**](StructuresInstalledSoftwareInfo.md) |  | [optional]
+**link_slug** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -14,6 +14,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 | [**manageServiceDetachFromPrivateNetwork()**](ManageServiceApi.md#manageServiceDetachFromPrivateNetwork) | **DELETE** /v1/vps/{id}/private-network/{network_id} |  |
 | [**manageServiceDetachIpAddress()**](ManageServiceApi.md#manageServiceDetachIpAddress) | **DELETE** /v1/vps/network/detach/{ip_address} |  |
 | [**manageServiceDetachSshKey()**](ManageServiceApi.md#manageServiceDetachSshKey) | **DELETE** /v1/vps/{id}/sshKey/{ssh_key_id} |  |
+| [**manageServiceDisablePostInstallAlert()**](ManageServiceApi.md#manageServiceDisablePostInstallAlert) | **DELETE** /v1/vps/{id}/software/post-install-alert |  |
 | [**manageServiceGetAvailableConfiguration()**](ManageServiceApi.md#manageServiceGetAvailableConfiguration) | **GET** /v1/vps/configuration |  |
 | [**manageServiceGetFileManagerSettings()**](ManageServiceApi.md#manageServiceGetFileManagerSettings) | **POST** /v1/vps/{id}/fm |  |
 | [**manageServiceGetHistory()**](ManageServiceApi.md#manageServiceGetHistory) | **GET** /v1/vps/{id}/history |  |
@@ -619,6 +620,64 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\ManageDetachSshKeyResponse**](../Model/ManageDetachSshKeyResponse.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `manageServiceDisablePostInstallAlert()`
+
+```php
+manageServiceDisablePostInstallAlert($id): \OpenAPI\Client\Model\ManageDisablePostInstallAlertResponse
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+
+try {
+    $result = $apiInstance->manageServiceDisablePostInstallAlert($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageServiceApi->manageServiceDisablePostInstallAlert: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ManageDisablePostInstallAlertResponse**](../Model/ManageDisablePostInstallAlertResponse.md)
 
 ### Authorization
 
