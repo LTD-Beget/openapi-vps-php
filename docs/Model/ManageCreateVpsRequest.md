@@ -16,5 +16,7 @@ Name | Type | Description | Notes
 **beget_ssh_access_allowed** | **bool** |  | [optional]
 **private_networks** | [**\OpenAPI\Client\Model\ManagePrivateNetworkInfo[]**](ManagePrivateNetworkInfo.md) |  | [optional]
 **link_slug** | **string** |  | [optional]
+**license_id** | **int** |  | [optional]
+**region** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

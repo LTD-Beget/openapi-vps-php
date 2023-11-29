@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **ssh_keys** | **int[]** |  | [optional]
 **password** | **string** |  | [optional]
 **software** | [**\OpenAPI\Client\Model\ManageSoftwareInstallInfo**](ManageSoftwareInstallInfo.md) |  | [optional]
+**license_id** | **int** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -14,7 +14,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `networkServiceCreatePrivateNetwork()`
 
 ```php
-networkServiceCreatePrivateNetwork(): \OpenAPI\Client\Model\NetworkCreatePrivateNetworkResponse
+networkServiceCreatePrivateNetwork($network_create_private_network_request): \OpenAPI\Client\Model\NetworkCreatePrivateNetworkResponse
 ```
 
 
@@ -36,9 +36,10 @@ $apiInstance = new OpenAPI\Client\Api\NetworkServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$network_create_private_network_request = new \OpenAPI\Client\Model\NetworkCreatePrivateNetworkRequest(); // \OpenAPI\Client\Model\NetworkCreatePrivateNetworkRequest
 
 try {
-    $result = $apiInstance->networkServiceCreatePrivateNetwork();
+    $result = $apiInstance->networkServiceCreatePrivateNetwork($network_create_private_network_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkServiceApi->networkServiceCreatePrivateNetwork: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +48,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **network_create_private_network_request** | [**\OpenAPI\Client\Model\NetworkCreatePrivateNetworkRequest**](../Model/NetworkCreatePrivateNetworkRequest.md)|  | |
 
 ### Return type
 
@@ -59,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

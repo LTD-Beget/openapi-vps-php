@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **category** | [**\OpenAPI\Client\Model\StructuresSoftwareCategory[]**](StructuresSoftwareCategory.md) |  | [optional]
 **slug** | **string** |  | [optional]
 **post_install_alert** | **bool** |  | [optional]
+**license** | [**\OpenAPI\Client\Model\StructuresIssuedSoftwareLicense[]**](StructuresIssuedSoftwareLicense.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

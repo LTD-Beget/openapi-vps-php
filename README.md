@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *ManageServiceApi* | [**manageServiceGetInfo**](docs/Api/ManageServiceApi.md#manageservicegetinfo) | **GET** /v1/vps/server/{id} | 
 *ManageServiceApi* | [**manageServiceGetInstalledSoftware**](docs/Api/ManageServiceApi.md#manageservicegetinstalledsoftware) | **GET** /v1/vps/{id}/software | 
 *ManageServiceApi* | [**manageServiceGetList**](docs/Api/ManageServiceApi.md#manageservicegetlist) | **GET** /v1/vps/server/list | 
+*ManageServiceApi* | [**manageServiceGetRegionList**](docs/Api/ManageServiceApi.md#manageservicegetregionlist) | **GET** /v1/vps/region | 
 *ManageServiceApi* | [**manageServiceGetStatuses**](docs/Api/ManageServiceApi.md#manageservicegetstatuses) | **GET** /v1/vps/server/statuses | 
 *ManageServiceApi* | [**manageServiceRebootVps**](docs/Api/ManageServiceApi.md#manageservicerebootvps) | **POST** /v1/vps/server/{id}/reboot | 
 *ManageServiceApi* | [**manageServiceReinstall**](docs/Api/ManageServiceApi.md#manageservicereinstall) | **POST** /v1/vps/server/{id}/reinstall | 
@@ -112,6 +113,7 @@ Class | Method | HTTP request | Description
 *ManageServiceApi* | [**manageServiceStopVps**](docs/Api/ManageServiceApi.md#manageservicestopvps) | **POST** /v1/vps/server/{id}/stop | 
 *ManageServiceApi* | [**manageServiceUnarchive**](docs/Api/ManageServiceApi.md#manageserviceunarchive) | **DELETE** /v1/vps/archive/{id} | 
 *ManageServiceApi* | [**manageServiceUpdateInfo**](docs/Api/ManageServiceApi.md#manageserviceupdateinfo) | **PUT** /v1/vps/server/{id}/info | 
+*MarketplaceServiceApi* | [**marketplaceServiceGetSoftwareInfo**](docs/Api/MarketplaceServiceApi.md#marketplaceservicegetsoftwareinfo) | **GET** /v1/vps/marketplace/software/{name}/{version} | 
 *MarketplaceServiceApi* | [**marketplaceServiceGetSoftwareList**](docs/Api/MarketplaceServiceApi.md#marketplaceservicegetsoftwarelist) | **GET** /v1/vps/marketplace/software/list | 
 *NetworkServiceApi* | [**networkServiceCreatePrivateNetwork**](docs/Api/NetworkServiceApi.md#networkservicecreateprivatenetwork) | **POST** /v1/vps/private-network | 
 *NetworkServiceApi* | [**networkServiceGetNetworkInfo**](docs/Api/NetworkServiceApi.md#networkservicegetnetworkinfo) | **GET** /v1/vps/network | 
@@ -125,6 +127,8 @@ Class | Method | HTTP request | Description
 *SnapshotServiceApi* | [**snapshotServiceGetAllRestores**](docs/Api/SnapshotServiceApi.md#snapshotservicegetallrestores) | **GET** /v1/vps/snapshot/restore | 
 *SnapshotServiceApi* | [**snapshotServiceRemove**](docs/Api/SnapshotServiceApi.md#snapshotserviceremove) | **DELETE** /v1/vps/snapshot/{id} | 
 *SnapshotServiceApi* | [**snapshotServiceRestore**](docs/Api/SnapshotServiceApi.md#snapshotservicerestore) | **POST** /v1/vps/snapshot/{id}/restore | 
+*SoftwareLicenseServiceApi* | [**softwareLicenseServiceChangeLicensePlan**](docs/Api/SoftwareLicenseServiceApi.md#softwarelicenseservicechangelicenseplan) | **PATCH** /v1/vps/software/license/{vps_id} | 
+*SoftwareLicenseServiceApi* | [**softwareLicenseServiceGetLicenseInfo**](docs/Api/SoftwareLicenseServiceApi.md#softwarelicenseservicegetlicenseinfo) | **GET** /v1/vps/software/license | 
 *SshKeyServiceApi* | [**sshKeyServiceAdd**](docs/Api/SshKeyServiceApi.md#sshkeyserviceadd) | **POST** /v1/vps/sshKey | 
 *SshKeyServiceApi* | [**sshKeyServiceGetAll**](docs/Api/SshKeyServiceApi.md#sshkeyservicegetall) | **GET** /v1/vps/sshKey | 
 *SshKeyServiceApi* | [**sshKeyServiceRemove**](docs/Api/SshKeyServiceApi.md#sshkeyserviceremove) | **DELETE** /v1/vps/sshKey/{id} | 
@@ -195,6 +199,7 @@ Class | Method | HTTP request | Description
 - [ManageGetInfoResponse](docs/Model/ManageGetInfoResponse.md)
 - [ManageGetInstalledSoftwareResponse](docs/Model/ManageGetInstalledSoftwareResponse.md)
 - [ManageGetListResponse](docs/Model/ManageGetListResponse.md)
+- [ManageGetRegionListResponse](docs/Model/ManageGetRegionListResponse.md)
 - [ManageGetStatusesResponse](docs/Model/ManageGetStatusesResponse.md)
 - [ManageGetStatusesResponseStatusInfo](docs/Model/ManageGetStatusesResponseStatusInfo.md)
 - [ManageHistoryItem](docs/Model/ManageHistoryItem.md)
@@ -204,6 +209,7 @@ Class | Method | HTTP request | Description
 - [ManageReinstallRequest](docs/Model/ManageReinstallRequest.md)
 - [ManageReinstallResponse](docs/Model/ManageReinstallResponse.md)
 - [ManageReinstallResponseError](docs/Model/ManageReinstallResponseError.md)
+- [ManageReinstallResponseErrorInsufficientFundsError](docs/Model/ManageReinstallResponseErrorInsufficientFundsError.md)
 - [ManageReinstallResponseErrorSoftwareVariableError](docs/Model/ManageReinstallResponseErrorSoftwareVariableError.md)
 - [ManageReinstallResponseErrorSoftwareVariableErrorValueError](docs/Model/ManageReinstallResponseErrorSoftwareVariableErrorValueError.md)
 - [ManageRemoveVpsResponse](docs/Model/ManageRemoveVpsResponse.md)
@@ -233,11 +239,13 @@ Class | Method | HTTP request | Description
 - [MarketplaceEmailField](docs/Model/MarketplaceEmailField.md)
 - [MarketplaceFieldCommon](docs/Model/MarketplaceFieldCommon.md)
 - [MarketplaceFieldDesc](docs/Model/MarketplaceFieldDesc.md)
+- [MarketplaceGetSoftwareInfoResponse](docs/Model/MarketplaceGetSoftwareInfoResponse.md)
 - [MarketplaceGetSoftwareListResponse](docs/Model/MarketplaceGetSoftwareListResponse.md)
-- [MarketplaceGetSoftwareListResponseSoftwareInfo](docs/Model/MarketplaceGetSoftwareListResponseSoftwareInfo.md)
-- [MarketplaceGetSoftwareListResponseSoftwareInfoRequirements](docs/Model/MarketplaceGetSoftwareListResponseSoftwareInfoRequirements.md)
 - [MarketplacePasswordField](docs/Model/MarketplacePasswordField.md)
+- [MarketplaceSoftwareInfo](docs/Model/MarketplaceSoftwareInfo.md)
+- [MarketplaceSoftwareInfoRequirements](docs/Model/MarketplaceSoftwareInfoRequirements.md)
 - [MarketplaceTextField](docs/Model/MarketplaceTextField.md)
+- [NetworkCreatePrivateNetworkRequest](docs/Model/NetworkCreatePrivateNetworkRequest.md)
 - [NetworkCreatePrivateNetworkResponse](docs/Model/NetworkCreatePrivateNetworkResponse.md)
 - [NetworkCreatePrivateNetworkResponseError](docs/Model/NetworkCreatePrivateNetworkResponseError.md)
 - [NetworkGetNetworkInfoResponse](docs/Model/NetworkGetNetworkInfoResponse.md)
@@ -265,6 +273,11 @@ Class | Method | HTTP request | Description
 - [SnapshotRestoreResponse](docs/Model/SnapshotRestoreResponse.md)
 - [SnapshotRestoreResponseError](docs/Model/SnapshotRestoreResponseError.md)
 - [SnapshotSnapshot](docs/Model/SnapshotSnapshot.md)
+- [SoftwareLicenseChangeLicensePlanRequest](docs/Model/SoftwareLicenseChangeLicensePlanRequest.md)
+- [SoftwareLicenseChangeLicensePlanResponse](docs/Model/SoftwareLicenseChangeLicensePlanResponse.md)
+- [SoftwareLicenseChangeLicensePlanResponseError](docs/Model/SoftwareLicenseChangeLicensePlanResponseError.md)
+- [SoftwareLicenseChangeLicensePlanResponseErrorInsufficientFundsError](docs/Model/SoftwareLicenseChangeLicensePlanResponseErrorInsufficientFundsError.md)
+- [SoftwareLicenseGetLicenseInfoResponse](docs/Model/SoftwareLicenseGetLicenseInfoResponse.md)
 - [SshKeyAddRequest](docs/Model/SshKeyAddRequest.md)
 - [SshKeyAddResponse](docs/Model/SshKeyAddResponse.md)
 - [SshKeyAddResponseError](docs/Model/SshKeyAddResponseError.md)
@@ -292,11 +305,17 @@ Class | Method | HTTP request | Description
 - [StructuresInstalledSoftwareInfo](docs/Model/StructuresInstalledSoftwareInfo.md)
 - [StructuresInstalledSoftwareInfoFieldValue](docs/Model/StructuresInstalledSoftwareInfoFieldValue.md)
 - [StructuresIpInfo](docs/Model/StructuresIpInfo.md)
+- [StructuresIssuedSoftwareLicense](docs/Model/StructuresIssuedSoftwareLicense.md)
 - [StructuresOrderInfo](docs/Model/StructuresOrderInfo.md)
 - [StructuresOrderInfoErrorDetails](docs/Model/StructuresOrderInfoErrorDetails.md)
 - [StructuresOrderInfoErrorDetailsFileError](docs/Model/StructuresOrderInfoErrorDetailsFileError.md)
 - [StructuresPrivateNetwork](docs/Model/StructuresPrivateNetwork.md)
+- [StructuresRegionInfo](docs/Model/StructuresRegionInfo.md)
 - [StructuresSoftwareCategory](docs/Model/StructuresSoftwareCategory.md)
+- [StructuresSoftwareLicense](docs/Model/StructuresSoftwareLicense.md)
+- [StructuresSoftwareLicenseBillingType](docs/Model/StructuresSoftwareLicenseBillingType.md)
+- [StructuresSoftwareLicenseBillingTypeDaily](docs/Model/StructuresSoftwareLicenseBillingTypeDaily.md)
+- [StructuresSoftwareLicenseBillingTypeMonthly](docs/Model/StructuresSoftwareLicenseBillingTypeMonthly.md)
 - [StructuresSoftwareMetadata](docs/Model/StructuresSoftwareMetadata.md)
 - [StructuresSshKeyInfo](docs/Model/StructuresSshKeyInfo.md)
 
@@ -323,6 +342,6 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `v1.5.1`
-    - Package version: `v1.5.1`
+- API version: `v1.6.0`
+    - Package version: `v1.6.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

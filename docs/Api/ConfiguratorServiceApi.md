@@ -11,7 +11,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `configuratorServiceGetCalculation()`
 
 ```php
-configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id, $software_id, $snapshot_id): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
+configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
 ```
 
 
@@ -36,12 +36,13 @@ $apiInstance = new OpenAPI\Client\Api\ConfiguratorServiceApi(
 $params_cpu_count = 56; // int
 $params_disk_size = 56; // int
 $params_memory = 56; // int
+$region = 'region_example'; // string
 $vps_id = 'vps_id_example'; // string
 $software_id = 56; // int
 $snapshot_id = 'snapshot_id_example'; // string
 
 try {
-    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $vps_id, $software_id, $snapshot_id);
+    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfiguratorServiceApi->configuratorServiceGetCalculation: ', $e->getMessage(), PHP_EOL;
@@ -55,6 +56,7 @@ try {
 | **params_cpu_count** | **int**|  | [optional] |
 | **params_disk_size** | **int**|  | [optional] |
 | **params_memory** | **int**|  | [optional] |
+| **region** | **string**|  | [optional] |
 | **vps_id** | **string**|  | [optional] |
 | **software_id** | **int**|  | [optional] |
 | **snapshot_id** | **string**|  | [optional] |
@@ -79,7 +81,7 @@ try {
 ## `configuratorServiceGetConfiguratorInfo()`
 
 ```php
-configuratorServiceGetConfiguratorInfo(): \OpenAPI\Client\Model\ConfiguratorGetConfiguratorInfoResponse
+configuratorServiceGetConfiguratorInfo($region): \OpenAPI\Client\Model\ConfiguratorGetConfiguratorInfoResponse
 ```
 
 
@@ -101,9 +103,10 @@ $apiInstance = new OpenAPI\Client\Api\ConfiguratorServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$region = 'region_example'; // string
 
 try {
-    $result = $apiInstance->configuratorServiceGetConfiguratorInfo();
+    $result = $apiInstance->configuratorServiceGetConfiguratorInfo($region);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfiguratorServiceApi->configuratorServiceGetConfiguratorInfo: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +115,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **region** | **string**|  | [optional] |
 
 ### Return type
 

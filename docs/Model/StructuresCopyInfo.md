@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **vps_name** | **string** |  | [optional]
 **date** | **string** |  | [optional]
 **size** | **string** |  | [optional]
+**region** | **string** |  | [optional]
 **configuration** | [**\OpenAPI\Client\Model\StructuresCopyInfoConfiguration**](StructuresCopyInfoConfiguration.md) |  | [optional]
 **installed_software** | [**\OpenAPI\Client\Model\StructuresInstalledSoftwareInfo**](StructuresInstalledSoftwareInfo.md) |  | [optional]
 
