@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **custom** | **bool** |  | [optional]
 **configurable** | **bool** |  | [optional]
 **region** | **string** |  | [optional]
+**group** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
