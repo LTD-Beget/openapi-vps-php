@@ -11,7 +11,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `configuratorServiceGetCalculation()`
 
 ```php
-configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
+configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id, $image_id, $configuration_group): \OpenAPI\Client\Model\ConfiguratorGetCalculationResponse
 ```
 
 
@@ -40,9 +40,11 @@ $region = 'region_example'; // string
 $vps_id = 'vps_id_example'; // string
 $software_id = 56; // int
 $snapshot_id = 'snapshot_id_example'; // string
+$image_id = 'image_id_example'; // string
+$configuration_group = 'configuration_group_example'; // string
 
 try {
-    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id);
+    $result = $apiInstance->configuratorServiceGetCalculation($params_cpu_count, $params_disk_size, $params_memory, $region, $vps_id, $software_id, $snapshot_id, $image_id, $configuration_group);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfiguratorServiceApi->configuratorServiceGetCalculation: ', $e->getMessage(), PHP_EOL;
@@ -60,6 +62,8 @@ try {
 | **vps_id** | **string**|  | [optional] |
 | **software_id** | **int**|  | [optional] |
 | **snapshot_id** | **string**|  | [optional] |
+| **image_id** | **string**|  | [optional] |
+| **configuration_group** | **string**|  | [optional] |
 
 ### Return type
 
@@ -81,7 +85,7 @@ try {
 ## `configuratorServiceGetConfiguratorInfo()`
 
 ```php
-configuratorServiceGetConfiguratorInfo($region): \OpenAPI\Client\Model\ConfiguratorGetConfiguratorInfoResponse
+configuratorServiceGetConfiguratorInfo($region, $configuration_group): \OpenAPI\Client\Model\ConfiguratorGetConfiguratorInfoResponse
 ```
 
 
@@ -104,9 +108,10 @@ $apiInstance = new OpenAPI\Client\Api\ConfiguratorServiceApi(
     $config
 );
 $region = 'region_example'; // string
+$configuration_group = 'configuration_group_example'; // string
 
 try {
-    $result = $apiInstance->configuratorServiceGetConfiguratorInfo($region);
+    $result = $apiInstance->configuratorServiceGetConfiguratorInfo($region, $configuration_group);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConfiguratorServiceApi->configuratorServiceGetConfiguratorInfo: ', $e->getMessage(), PHP_EOL;
@@ -118,6 +123,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **region** | **string**|  | [optional] |
+| **configuration_group** | **string**|  | [optional] |
 
 ### Return type
 
