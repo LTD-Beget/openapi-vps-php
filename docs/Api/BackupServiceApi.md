@@ -14,7 +14,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 ## `backupServiceGetAvailableCopies()`
 
 ```php
-backupServiceGetAvailableCopies(): \OpenAPI\Client\Model\BackupGetAvailableCopiesResponse
+backupServiceGetAvailableCopies($filter): \OpenAPI\Client\Model\BackupGetAvailableCopiesResponse
 ```
 
 
@@ -36,9 +36,10 @@ $apiInstance = new OpenAPI\Client\Api\BackupServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->backupServiceGetAvailableCopies();
+    $result = $apiInstance->backupServiceGetAvailableCopies($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BackupServiceApi->backupServiceGetAvailableCopies: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +48,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **vps_id** | **string** |  | [optional]
 **vps_name** | **string** |  | [optional]
+**vps_exists** | **bool** |  | [optional]
 **date_create** | **string** |  | [optional]
 **size** | **string** |  | [optional]
 **status** | **string** |  | [optional]

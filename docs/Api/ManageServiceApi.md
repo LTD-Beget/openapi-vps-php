@@ -7,7 +7,9 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 | [**manageServiceAttachIpAddress()**](ManageServiceApi.md#manageServiceAttachIpAddress) | **POST** /v1/vps/{id}/network/{ip_address} |  |
 | [**manageServiceAttachSshKey()**](ManageServiceApi.md#manageServiceAttachSshKey) | **POST** /v1/vps/{id}/sshKey/{ssh_key_id} |  |
 | [**manageServiceAttachToPrivateNetwork()**](ManageServiceApi.md#manageServiceAttachToPrivateNetwork) | **POST** /v1/vps/{id}/private-network/{network_id} |  |
+| [**manageServiceBindProject()**](ManageServiceApi.md#manageServiceBindProject) | **PUT** /v1/vps/server/{id}/project |  |
 | [**manageServiceChangeConfiguration()**](ManageServiceApi.md#manageServiceChangeConfiguration) | **PUT** /v1/vps/server/{id}/configuration |  |
+| [**manageServiceChangePinned()**](ManageServiceApi.md#manageServiceChangePinned) | **PUT** /v1/vps/server/{id}/pin |  |
 | [**manageServiceChangeSshAccess()**](ManageServiceApi.md#manageServiceChangeSshAccess) | **PUT** /v1/vps/{id}/ssh/access |  |
 | [**manageServiceCheckSoftwareRequirements()**](ManageServiceApi.md#manageServiceCheckSoftwareRequirements) | **POST** /v1/vps/software/requirements |  |
 | [**manageServiceCreateVps()**](ManageServiceApi.md#manageServiceCreateVps) | **POST** /v1/vps/server |  |
@@ -221,6 +223,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `manageServiceBindProject()`
+
+```php
+manageServiceBindProject($id, $manage_bind_project_request): \OpenAPI\Client\Model\ManageBindProjectResponse
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$manage_bind_project_request = new \OpenAPI\Client\Model\ManageBindProjectRequest(); // \OpenAPI\Client\Model\ManageBindProjectRequest
+
+try {
+    $result = $apiInstance->manageServiceBindProject($id, $manage_bind_project_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageServiceApi->manageServiceBindProject: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **manage_bind_project_request** | [**\OpenAPI\Client\Model\ManageBindProjectRequest**](../Model/ManageBindProjectRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ManageBindProjectResponse**](../Model/ManageBindProjectResponse.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `manageServiceChangeConfiguration()`
 
 ```php
@@ -267,6 +329,66 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\ManageChangeConfigurationResponse**](../Model/ManageChangeConfigurationResponse.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `manageServiceChangePinned()`
+
+```php
+manageServiceChangePinned($id, $manage_change_pinned_request): \OpenAPI\Client\Model\ManageChangePinnedResponse
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$manage_change_pinned_request = new \OpenAPI\Client\Model\ManageChangePinnedRequest(); // \OpenAPI\Client\Model\ManageChangePinnedRequest
+
+try {
+    $result = $apiInstance->manageServiceChangePinned($id, $manage_change_pinned_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageServiceApi->manageServiceChangePinned: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **manage_change_pinned_request** | [**\OpenAPI\Client\Model\ManageChangePinnedRequest**](../Model/ManageChangePinnedRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\ManageChangePinnedResponse**](../Model/ManageChangePinnedResponse.md)
 
 ### Authorization
 
@@ -983,7 +1105,7 @@ try {
 ## `manageServiceGetList()`
 
 ```php
-manageServiceGetList(): \OpenAPI\Client\Model\ManageGetListResponse
+manageServiceGetList($offset, $limit, $filter, $sort): \OpenAPI\Client\Model\ManageGetListResponse
 ```
 
 
@@ -1005,9 +1127,13 @@ $apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
+$limit = 56; // int
+$filter = 'filter_example'; // string
+$sort = 'sort_example'; // string
 
 try {
-    $result = $apiInstance->manageServiceGetList();
+    $result = $apiInstance->manageServiceGetList($offset, $limit, $filter, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManageServiceApi->manageServiceGetList: ', $e->getMessage(), PHP_EOL;
@@ -1016,7 +1142,12 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
+| **limit** | **int**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **sort** | **string**|  | [optional] |
 
 ### Return type
 
@@ -1669,7 +1800,7 @@ try {
 ## `manageServiceStopVps()`
 
 ```php
-manageServiceStopVps($id): \OpenAPI\Client\Model\ManageStopVpsResponse
+manageServiceStopVps($id, $force): \OpenAPI\Client\Model\ManageStopVpsResponse
 ```
 
 
@@ -1692,9 +1823,10 @@ $apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
     $config
 );
 $id = 'id_example'; // string
+$force = True; // bool
 
 try {
-    $result = $apiInstance->manageServiceStopVps($id);
+    $result = $apiInstance->manageServiceStopVps($id, $force);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManageServiceApi->manageServiceStopVps: ', $e->getMessage(), PHP_EOL;
@@ -1706,6 +1838,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
+| **force** | **bool**|  | [optional] |
 
 ### Return type
 

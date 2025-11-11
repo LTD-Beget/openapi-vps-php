@@ -20,5 +20,7 @@ Name | Type | Description | Notes
 **license_id** | **int** |  | [optional]
 **region** | **string** |  | [optional]
 **configuration_group** | **string** |  | [optional]
+**ui_pinned** | **bool** |  | [optional]
+**project_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

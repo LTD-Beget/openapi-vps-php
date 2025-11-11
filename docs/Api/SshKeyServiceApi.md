@@ -7,6 +7,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 | [**sshKeyServiceAdd()**](SshKeyServiceApi.md#sshKeyServiceAdd) | **POST** /v1/vps/sshKey |  |
 | [**sshKeyServiceGetAll()**](SshKeyServiceApi.md#sshKeyServiceGetAll) | **GET** /v1/vps/sshKey |  |
 | [**sshKeyServiceRemove()**](SshKeyServiceApi.md#sshKeyServiceRemove) | **DELETE** /v1/vps/sshKey/{id} |  |
+| [**sshKeyServiceUpdate()**](SshKeyServiceApi.md#sshKeyServiceUpdate) | **PUT** /v1/vps/sshKey/{id} |  |
 
 
 ## `sshKeyServiceAdd()`
@@ -176,6 +177,66 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sshKeyServiceUpdate()`
+
+```php
+sshKeyServiceUpdate($id, $ssh_key_update_request): \OpenAPI\Client\Model\SshKeyUpdateResponse
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\SshKeyServiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int
+$ssh_key_update_request = new \OpenAPI\Client\Model\SshKeyUpdateRequest(); // \OpenAPI\Client\Model\SshKeyUpdateRequest
+
+try {
+    $result = $apiInstance->sshKeyServiceUpdate($id, $ssh_key_update_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SshKeyServiceApi->sshKeyServiceUpdate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**|  | |
+| **ssh_key_update_request** | [**\OpenAPI\Client\Model\SshKeyUpdateRequest**](../Model/SshKeyUpdateRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\SshKeyUpdateResponse**](../Model/SshKeyUpdateResponse.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

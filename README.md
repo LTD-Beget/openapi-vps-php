@@ -59,9 +59,10 @@ $apiInstance = new OpenAPI\Client\Api\BackupServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->backupServiceGetAvailableCopies();
+    $result = $apiInstance->backupServiceGetAvailableCopies($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BackupServiceApi->backupServiceGetAvailableCopies: ', $e->getMessage(), PHP_EOL;
@@ -85,7 +86,9 @@ Class | Method | HTTP request | Description
 *ManageServiceApi* | [**manageServiceAttachIpAddress**](docs/Api/ManageServiceApi.md#manageserviceattachipaddress) | **POST** /v1/vps/{id}/network/{ip_address} | 
 *ManageServiceApi* | [**manageServiceAttachSshKey**](docs/Api/ManageServiceApi.md#manageserviceattachsshkey) | **POST** /v1/vps/{id}/sshKey/{ssh_key_id} | 
 *ManageServiceApi* | [**manageServiceAttachToPrivateNetwork**](docs/Api/ManageServiceApi.md#manageserviceattachtoprivatenetwork) | **POST** /v1/vps/{id}/private-network/{network_id} | 
+*ManageServiceApi* | [**manageServiceBindProject**](docs/Api/ManageServiceApi.md#manageservicebindproject) | **PUT** /v1/vps/server/{id}/project | 
 *ManageServiceApi* | [**manageServiceChangeConfiguration**](docs/Api/ManageServiceApi.md#manageservicechangeconfiguration) | **PUT** /v1/vps/server/{id}/configuration | 
+*ManageServiceApi* | [**manageServiceChangePinned**](docs/Api/ManageServiceApi.md#manageservicechangepinned) | **PUT** /v1/vps/server/{id}/pin | 
 *ManageServiceApi* | [**manageServiceChangeSshAccess**](docs/Api/ManageServiceApi.md#manageservicechangesshaccess) | **PUT** /v1/vps/{id}/ssh/access | 
 *ManageServiceApi* | [**manageServiceCheckSoftwareRequirements**](docs/Api/ManageServiceApi.md#manageservicechecksoftwarerequirements) | **POST** /v1/vps/software/requirements | 
 *ManageServiceApi* | [**manageServiceCreateVps**](docs/Api/ManageServiceApi.md#manageservicecreatevps) | **POST** /v1/vps/server | 
@@ -119,6 +122,7 @@ Class | Method | HTTP request | Description
 *NetworkServiceApi* | [**networkServiceGetNetworkInfo**](docs/Api/NetworkServiceApi.md#networkservicegetnetworkinfo) | **GET** /v1/vps/network | 
 *NetworkServiceApi* | [**networkServiceOrderIpAddress**](docs/Api/NetworkServiceApi.md#networkserviceorderipaddress) | **POST** /v1/vps/network | 
 *NetworkServiceApi* | [**networkServiceRemoveIpAddress**](docs/Api/NetworkServiceApi.md#networkserviceremoveipaddress) | **DELETE** /v1/vps/network/{ip_address} | 
+*NetworkServiceApi* | [**networkServiceRemovePrivateNetwork**](docs/Api/NetworkServiceApi.md#networkserviceremoveprivatenetwork) | **DELETE** /v1/vps/private-network/{network_id} | 
 *NetworkServiceApi* | [**networkServiceSuggestPrivateAddress**](docs/Api/NetworkServiceApi.md#networkservicesuggestprivateaddress) | **POST** /v1/vps/private-network/{network_id}/suggested-address | 
 *SnapshotServiceApi* | [**snapshotServiceCreate**](docs/Api/SnapshotServiceApi.md#snapshotservicecreate) | **POST** /v1/vps/snapshot | 
 *SnapshotServiceApi* | [**snapshotServiceCreateCalculator**](docs/Api/SnapshotServiceApi.md#snapshotservicecreatecalculator) | **POST** /v1/vps/snapshot/calculator | 
@@ -132,6 +136,7 @@ Class | Method | HTTP request | Description
 *SshKeyServiceApi* | [**sshKeyServiceAdd**](docs/Api/SshKeyServiceApi.md#sshkeyserviceadd) | **POST** /v1/vps/sshKey | 
 *SshKeyServiceApi* | [**sshKeyServiceGetAll**](docs/Api/SshKeyServiceApi.md#sshkeyservicegetall) | **GET** /v1/vps/sshKey | 
 *SshKeyServiceApi* | [**sshKeyServiceRemove**](docs/Api/SshKeyServiceApi.md#sshkeyserviceremove) | **DELETE** /v1/vps/sshKey/{id} | 
+*SshKeyServiceApi* | [**sshKeyServiceUpdate**](docs/Api/SshKeyServiceApi.md#sshkeyserviceupdate) | **PUT** /v1/vps/sshKey/{id} | 
 *StatisticServiceApi* | [**statisticServiceGetCpu**](docs/Api/StatisticServiceApi.md#statisticservicegetcpu) | **GET** /v1/vps/statistic/cpu/{id} | 
 *StatisticServiceApi* | [**statisticServiceGetCpuDetails**](docs/Api/StatisticServiceApi.md#statisticservicegetcpudetails) | **GET** /v1/vps/statistic/cpu-details/{id} | 
 *StatisticServiceApi* | [**statisticServiceGetDisk**](docs/Api/StatisticServiceApi.md#statisticservicegetdisk) | **GET** /v1/vps/statistic/disk/{id} | 
@@ -169,9 +174,15 @@ Class | Method | HTTP request | Description
 - [ManageAttachToPrivateNetworkRequest](docs/Model/ManageAttachToPrivateNetworkRequest.md)
 - [ManageAttachToPrivateNetworkResponse](docs/Model/ManageAttachToPrivateNetworkResponse.md)
 - [ManageAttachToPrivateNetworkResponseError](docs/Model/ManageAttachToPrivateNetworkResponseError.md)
+- [ManageBindProjectRequest](docs/Model/ManageBindProjectRequest.md)
+- [ManageBindProjectResponse](docs/Model/ManageBindProjectResponse.md)
+- [ManageBindProjectResponseError](docs/Model/ManageBindProjectResponseError.md)
 - [ManageChangeConfigurationRequest](docs/Model/ManageChangeConfigurationRequest.md)
 - [ManageChangeConfigurationResponse](docs/Model/ManageChangeConfigurationResponse.md)
 - [ManageChangeConfigurationResponseError](docs/Model/ManageChangeConfigurationResponseError.md)
+- [ManageChangePinnedRequest](docs/Model/ManageChangePinnedRequest.md)
+- [ManageChangePinnedResponse](docs/Model/ManageChangePinnedResponse.md)
+- [ManageChangePinnedResponseError](docs/Model/ManageChangePinnedResponseError.md)
 - [ManageChangeSshAccessRequest](docs/Model/ManageChangeSshAccessRequest.md)
 - [ManageChangeSshAccessResponse](docs/Model/ManageChangeSshAccessResponse.md)
 - [ManageChangeSshAccessResponseError](docs/Model/ManageChangeSshAccessResponseError.md)
@@ -255,6 +266,8 @@ Class | Method | HTTP request | Description
 - [NetworkOrderIpAddressResponseError](docs/Model/NetworkOrderIpAddressResponseError.md)
 - [NetworkRemoveIpAddressResponse](docs/Model/NetworkRemoveIpAddressResponse.md)
 - [NetworkRemoveIpAddressResponseError](docs/Model/NetworkRemoveIpAddressResponseError.md)
+- [NetworkRemovePrivateNetworkResponse](docs/Model/NetworkRemovePrivateNetworkResponse.md)
+- [NetworkRemovePrivateNetworkResponseError](docs/Model/NetworkRemovePrivateNetworkResponseError.md)
 - [NetworkSuggestPrivateAddressRequest](docs/Model/NetworkSuggestPrivateAddressRequest.md)
 - [NetworkSuggestPrivateAddressResponse](docs/Model/NetworkSuggestPrivateAddressResponse.md)
 - [SnapshotCreateCalculatorRequest](docs/Model/SnapshotCreateCalculatorRequest.md)
@@ -285,6 +298,9 @@ Class | Method | HTTP request | Description
 - [SshKeyGetAllResponse](docs/Model/SshKeyGetAllResponse.md)
 - [SshKeyRemoveResponse](docs/Model/SshKeyRemoveResponse.md)
 - [SshKeyRemoveResponseError](docs/Model/SshKeyRemoveResponseError.md)
+- [SshKeyUpdateRequest](docs/Model/SshKeyUpdateRequest.md)
+- [SshKeyUpdateResponse](docs/Model/SshKeyUpdateResponse.md)
+- [SshKeyUpdateResponseError](docs/Model/SshKeyUpdateResponseError.md)
 - [StatisticGetCpuDetailsResponse](docs/Model/StatisticGetCpuDetailsResponse.md)
 - [StatisticGetCpuResponse](docs/Model/StatisticGetCpuResponse.md)
 - [StatisticGetDiskResponse](docs/Model/StatisticGetDiskResponse.md)
@@ -343,6 +359,6 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `v1.7.2`
-    - Package version: `v1.7.2`
+- API version: `v1.7.3`
+    - Package version: `v1.7.3`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

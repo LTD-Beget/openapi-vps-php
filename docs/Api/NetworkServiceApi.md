@@ -8,6 +8,7 @@ All URIs are relative to https://api.beget.com, except if the operation defines 
 | [**networkServiceGetNetworkInfo()**](NetworkServiceApi.md#networkServiceGetNetworkInfo) | **GET** /v1/vps/network |  |
 | [**networkServiceOrderIpAddress()**](NetworkServiceApi.md#networkServiceOrderIpAddress) | **POST** /v1/vps/network |  |
 | [**networkServiceRemoveIpAddress()**](NetworkServiceApi.md#networkServiceRemoveIpAddress) | **DELETE** /v1/vps/network/{ip_address} |  |
+| [**networkServiceRemovePrivateNetwork()**](NetworkServiceApi.md#networkServiceRemovePrivateNetwork) | **DELETE** /v1/vps/private-network/{network_id} |  |
 | [**networkServiceSuggestPrivateAddress()**](NetworkServiceApi.md#networkServiceSuggestPrivateAddress) | **POST** /v1/vps/private-network/{network_id}/suggested-address |  |
 
 
@@ -72,7 +73,7 @@ try {
 ## `networkServiceGetNetworkInfo()`
 
 ```php
-networkServiceGetNetworkInfo(): \OpenAPI\Client\Model\NetworkGetNetworkInfoResponse
+networkServiceGetNetworkInfo($filter): \OpenAPI\Client\Model\NetworkGetNetworkInfoResponse
 ```
 
 
@@ -94,9 +95,10 @@ $apiInstance = new OpenAPI\Client\Api\NetworkServiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->networkServiceGetNetworkInfo();
+    $result = $apiInstance->networkServiceGetNetworkInfo($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkServiceApi->networkServiceGetNetworkInfo: ', $e->getMessage(), PHP_EOL;
@@ -105,7 +107,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -226,6 +230,64 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\NetworkRemoveIpAddressResponse**](../Model/NetworkRemoveIpAddressResponse.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `networkServiceRemovePrivateNetwork()`
+
+```php
+networkServiceRemovePrivateNetwork($network_id): \OpenAPI\Client\Model\NetworkRemovePrivateNetworkResponse
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\NetworkServiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$network_id = 'network_id_example'; // string
+
+try {
+    $result = $apiInstance->networkServiceRemovePrivateNetwork($network_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NetworkServiceApi->networkServiceRemovePrivateNetwork: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **network_id** | **string**|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\NetworkRemovePrivateNetworkResponse**](../Model/NetworkRemovePrivateNetworkResponse.md)
 
 ### Authorization
 
