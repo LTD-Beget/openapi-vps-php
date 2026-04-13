@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **unattended_install_available** | **bool** |  | [optional]
 **license** | [**\OpenAPI\Client\Model\StructuresSoftwareLicense[]**](StructuresSoftwareLicense.md) |  | [optional]
 **is_available** | **bool** |  | [optional]
+**requires_public_ip** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

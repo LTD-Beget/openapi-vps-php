@@ -39,5 +39,6 @@ Name | Type | Description | Notes
 **software_id** | **string** |  | [optional]
 **snapshot_id** | **string** |  | [optional]
 **image_id** | **string** |  | [optional]
+**display_rank** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1397,7 +1397,7 @@ try {
 ## `manageServiceRemoveVps()`
 
 ```php
-manageServiceRemoveVps($id): \OpenAPI\Client\Model\ManageRemoveVpsResponse
+manageServiceRemoveVps($id, $manage_remove_vps_request): \OpenAPI\Client\Model\ManageRemoveVpsResponse
 ```
 
 
@@ -1420,9 +1420,10 @@ $apiInstance = new OpenAPI\Client\Api\ManageServiceApi(
     $config
 );
 $id = 'id_example'; // string
+$manage_remove_vps_request = new \OpenAPI\Client\Model\ManageRemoveVpsRequest(); // \OpenAPI\Client\Model\ManageRemoveVpsRequest
 
 try {
-    $result = $apiInstance->manageServiceRemoveVps($id);
+    $result = $apiInstance->manageServiceRemoveVps($id, $manage_remove_vps_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManageServiceApi->manageServiceRemoveVps: ', $e->getMessage(), PHP_EOL;
@@ -1434,6 +1435,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
+| **manage_remove_vps_request** | [**\OpenAPI\Client\Model\ManageRemoveVpsRequest**](../Model/ManageRemoveVpsRequest.md)|  | |
 
 ### Return type
 
@@ -1445,7 +1447,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

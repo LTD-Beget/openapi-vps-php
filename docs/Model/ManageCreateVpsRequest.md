@@ -22,5 +22,8 @@ Name | Type | Description | Notes
 **configuration_group** | **string** |  | [optional]
 **ui_pinned** | **bool** |  | [optional]
 **project_id** | **string** |  | [optional]
+**ui_pinned_after_rank** | **string** |  | [optional]
+**ui_pinned_before_rank** | **string** |  | [optional]
+**network_interfaces** | [**\OpenAPI\Client\Model\ManageNetworkInterface[]**](ManageNetworkInterface.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
